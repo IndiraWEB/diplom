@@ -344,3 +344,16 @@ ERROR - 2015-12-09 09:26:14 --> 404 Page Not Found: Img/action_magistr.jpg
 ERROR - 2015-12-09 09:26:15 --> 404 Page Not Found: Assets/action_img
 ERROR - 2015-12-09 09:26:31 --> 404 Page Not Found: Assets/action_js
 ERROR - 2015-12-09 09:26:31 --> 404 Page Not Found: Img/action_news.jpg
+ERROR - 2015-12-09 09:50:33 --> 404 Page Not Found: Img/action_bakalavr.jpg
+ERROR - 2015-12-09 09:50:33 --> 404 Page Not Found: Img/action_news.jpg
+ERROR - 2015-12-09 09:50:33 --> 404 Page Not Found: Img/action_magistr.jpg
+ERROR - 2015-12-09 09:50:33 --> 404 Page Not Found: Assets/action_js
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Img/action_doctor.jpg
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Assets/action_js
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Img/action_news.jpg
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Img/action_doctor.jpg
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Img/action_magistr.jpg
+ERROR - 2015-12-09 09:50:34 --> 404 Page Not Found: Img/action_bakalavr.jpg
+ERROR - 2015-12-09 09:50:36 --> 404 Page Not Found: Assets/action_img
+ERROR - 2015-12-09 09:51:01 --> 404 Page Not Found: Assets/action_js
+ERROR - 2015-12-09 09:51:01 --> 404 Page Not Found: Img/action_news.jpg
