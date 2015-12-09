@@ -1,0 +1,668 @@
+/* font-family: "PTSansRegular"; */
+@font-face {
+    font-family: "PTSansRegular";
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot");
+    src: url("../fonts/PTSansRegular/PTSansRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PTSansRegular/PTSansRegular.woff") format("woff"),
+    url("../fonts/PTSansRegular/PTSansRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PTSansItalic"; */
+@font-face {
+    font-family: "PTSansItalic";
+    src: url("../fonts/PTSansItalic/PTSansItalic.eot");
+    src: url("../fonts/PTSansItalic/PTSansItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PTSansItalic/PTSansItalic.woff") format("woff"),
+    url("../fonts/PTSansItalic/PTSansItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "PTSansBold"; */
+@font-face {
+    font-family: "PTSansBold";
+    src: url("../fonts/PTSansBold/PTSansBold.eot");
+    src: url("../fonts/PTSansBold/PTSansBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/PTSansBold/PTSansBold.woff") format("woff"),
+    url("../fonts/PTSansBold/PTSansBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+.error {
+        background: #f60000;
+        border: 3px solid #d50000;
+}
+.top_line {
+    height: 36px;
+    background-color: #003399;
+    margin-bottom: 25px;
+}
+.enter_registr {
+    color: #fff;
+    font-family: "PTSansRegular";
+    float: right;
+    font-size: 14px;
+    line-height: 35px;
+}
+.enter_registr a {
+    color: #fff;
+}
+.enter_registr span {
+    margin: 0 5px;
+}
+.enter_registr a:hover {
+    text-decoration: underline;
+}
+.logo {
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+.slogan {
+    float: left;
+    font-family: "PTSansBold";
+    color: #003399;
+    font-size: 20px;
+}
+.head_slog {
+    font-family: "PTSansRegular";
+    color: #003399;
+    font-size: 14px;
+    float: right;
+}
+.head_right {
+    float: right;
+    width: 81%;
+}
+.nav {
+    clear: both;
+    float: left;
+    margin-top: 63px;
+}
+
+
+.nav_menu li:before {
+    display: block;
+    content: " |";
+    position: absolute;
+    top: 5px;
+    color: #003399;
+}
+.nav_menu li {
+    float: left;
+    position: relative;
+    font-family: "PTSansRegular";
+    font-size: 15px;
+}
+.nav_menu li a {
+    padding: 5px 20px;
+    color: #003399;
+    display: block;
+}
+.nav_menu li:first-child:before {
+    content: " ";
+}
+.nav_menu li:first-child a {
+    padding-left:0px;
+}
+.sub_menu{
+    display:none;
+}
+.nav_menu li:hover .sub_menu {
+    display: block;
+}
+.sub_menu {
+    display: none;
+    position: absolute;
+    width: 99%;
+    z-index: 55;
+    top: 19px;
+    left: 1px;
+    text-align: center;
+    border: 1px solid #cecece;
+    border-top: 0px;
+    padding-top: 5px;
+    background: #fff;
+}
+.sub_menu li:before{
+    content: '';
+}
+.sub_menu li {
+    float: none;
+    text-align: left;
+}
+.nav_menu li a:hover {
+    text-decoration: underline;
+}
+.sub_menu li a {
+    padding: 6px 18px;
+    display: block;
+}
+.sub_menu li:first-child a {
+    padding-left:18px;
+}
+/*Большая фотка*/
+.big_photo {
+    height: 275px;
+    border: 1px solid #039;
+    clear: both;
+    background-image: url(../img/bg_big_photo.jpg);
+    margin-bottom: 20px;
+    position: relative;
+}
+.add_bg {
+    position: absolute;
+    bottom: 20px;
+}
+.add {
+    display: block;
+    width: 170px;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #003199;
+    margin: 0 20px;
+    color: #003199;
+}
+.add:hover {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+/*конец*/
+/*content*/
+.content {
+    width: 72%;
+    float: left;
+}
+.title {
+    font-family: "PTSansBold";
+    color: #003399;
+    font-size: 16px;
+    border-bottom: 1px solid #003399;
+    padding-bottom: 3px;
+    margin-bottom: 15px;
+}
+.item_student {
+    width: 221px;
+    border: 4px solid #93b4d4;
+    float: left;
+    margin-right: 16px;
+}
+.item_student:last-child {
+    margin-right: 0px;
+}
+.item_student:hover {
+    border: 4px solid #5b7fa6;
+}
+.prof.title a {
+    color: #003399;
+}
+.prof.title:hover  a{
+    color: #93b4d4;
+    text-decoration: underline;
+}
+.item_student img {
+    float: left;
+}
+.prof.title {
+    border: none;
+    text-align: center;
+    margin: 10px auto;
+    width: 100%;
+    float: left;
+}
+.item_student_des p {
+    color: #6b6b6b;
+    font-size: 14px;
+    line-height: 16px;
+    text-indent: 15px;
+    text-align: justify;
+    padding: 0 13px 13px;
+}
+/*статистика*/
+.title_statistics.title {
+    border: none;
+    text-align: center;
+    /* clear: both; */
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+}
+.statistics {
+    margin-bottom: 20px;
+    clear: both;
+    overflow: hidden;
+}
+.statistics p {
+    font-family: "PTSansRegular";
+    font-size: 15px;
+    line-height: 16px;
+    color: #6b6b6b;
+    text-align: justify;
+    text-indent: 15px;
+    margin-bottom: 3px;
+}
+.statistics_item {
+    float: left;
+    width: 33%;
+    font-family: "PTSansRegular";
+    font-size: 22px;
+    color: #003399;
+    margin-bottom:20px;
+}
+.statistics_item span {
+    float: left;
+    font-size: 45px;
+    font-family: "PTSansBold";
+    color: #003399;
+    margin-right: 10px;
+    margin-left: 18px;
+}
+
+/*статистика конец*/
+/*content end*/
+/*side_bar*/
+.sider_bar {
+    width: 240px;
+    float: right;
+}
+.news_item_side_bar {
+    margin-bottom: 25px;
+}
+.news_item.title {
+    font-size: 14px;
+    border: none;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.news_item.title a {
+    text-decoration: underline;
+    color: #6b6b6b;
+    margin: 5px 0;
+    display: block;
+}
+.news_item_des p {
+    font-family: "PTSansRegular";
+    font-size: 14px;.news_item_side_bar {
+    margin-bottom: 25px;
+}
+    color: #6b6b6b;
+}
+.news_item_side_bar:hover .news_item_side_bar_img {
+    opacity: 0.6;
+}
+.news_item_side_bar:hover .news_item.title a {
+    color:#003199;
+}
+/*side_bar end*/
+/*footer*/
+.footer {
+    clear: both;
+    overflow: hidden;
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+}
+.footer_menu {
+    width: 150px;
+    overflow: hidden;
+    padding-top: 5px;
+    float: left;
+    border-right: 1px solid #039;
+}
+ul.f_menu li {
+    font-size: 14px;
+    color: #003399;
+    font-family: "PTSansRegular";
+}
+ul.f_menu li a {
+    color: #003399;
+    margin-bottom: 5px;
+    display: block;
+}
+.sub_menu_footer li {
+    margin-left: 25px;
+}
+.f_menu li a:hover {
+    text-decoration: underline;
+}
+.footer_addres p {
+    font-family: "PTSansRegular";
+    font-size: 14px;
+    color: #5d5d5d;
+    margin-bottom: 8px;
+}
+.footer_addres {
+    margin-left: 55px;
+    overflow: hidden;
+    float: left;
+}
+/*footer end*/
+/*modal okno*/
+.modal_div {
+    width: 252px;
+    background: #fff;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    border-radius: 7px;
+    margin-top: -150px;
+    margin-left: -150px;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    z-index: 11;
+    padding: 20px 25px;
+}
+
+.modal_close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 8040;
+  background-color: #fff;
+  border-radius: 50%;
+  background-image: url(../img/close.svg);
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 0px 1px rgba(51, 51, 51, 0.17);
+  background-size: 10px;
+  background-position: top 8px center;
+}
+
+#modal_form {
+	width: 300px; 
+	height: 300px; /* Размеры должны быть фиксированы */
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #fff;
+	position: fixed; /* чтобы окно было в видимой зоне в любом месте */
+	top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
+	left: 50%; /* половина экрана слева */
+	margin-top: -150px;
+	margin-left: -150px; /* тут вся магия центровки css, отступаем влево и вверх минус половину ширины и высоты соответственно =) */
+	display: none; /* в обычном состоянии окна не должно быть */
+	opacity: 0; /* полностью прозрачно для анимирования */
+	z-index: 5; /* окно должно быть наиболее большем слое */
+	padding: 20px 10px;
+}
+/* Кнопка закрыть для тех кто в танке) */
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+/* Подложка */
+#overlay {
+  z-index: 9; /* подложка должна быть выше слоев элементов сайта, но ниже слоя модального окна */
+	position: fixed; /* всегда перекрывает весь сайт */
+	background-color: #000; /* черная */
+	opacity: 0.8; /* но немного прозрачна */
+	width: 100%; 
+	height: 100%; /* размером во весь экран */
+	top: 0; 
+	left: 0; /* сверху и слева 0, обязательные свойства! */
+	cursor: pointer;
+	display: none; /* в обычном состоянии её нет) */
+}
+.title_z {
+    font-family: "PTSansRegular";
+    font-size: 16px;
+    margin-bottom: 21px;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    display: block;
+    border-bottom: 1px solid #cecece;
+    text-align: left;
+}
+.modal_f {
+    width: 250px;
+    text-indent: 10px;
+    padding: 0px;
+    outline: medium none;
+    line-height: 34px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    border: none;
+    display: block;
+    margin: 0px auto 18px;
+    height: 36px;
+}
+#modal1 button {
+    width: 250px;
+    height: 50px;
+    border: 2px solid #deb969;
+    margin-top: 10px;
+    font-family: 'Gothic';
+    text-align: center;
+    float: right;
+    font-size: 16px;
+    color: #dbb25a;
+    outline: none;
+    background-color: #3c2008;
+}
+#modal1 button:hover {
+    background-color: #dbb25a;
+    color: #3c2008;
+    border: 2px solid #764012;
+	cursor:pointer;
+}
+.main_page a {
+  font-family: calibri;
+  font-size: 27px;
+  font-weight: bold;
+  float: right;
+  color: #FAB24C;
+  text-decoration: underline;
+}
+#user_phone {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#user_phone:focus {
+	outline: none;
+}
+#user_phone:-moz-placeholder {
+  font-family: "Gothic";
+}
+#user_phone::-webkit-input-placeholder {
+  font-family: "Gothic";
+}
+#name:-moz-placeholder {
+  font-family: "Gothic";
+}
+#name::-webkit-input-placeholder {
+  font-family: "Gothic";
+}
+
+.open_modal:hover {
+    text-decoration:underline;
+}
+/*end modal*/
+/*Резюме*/
+.form_f.date_form {
+    height: auto;
+    /* line-height: 0px; */
+    padding: 7px 0px;
+}
+.form_f {
+    width: 220px;
+    float: left;
+    height: 34px;
+    text-indent: 10px;
+    padding: 0px;
+    outline: medium none;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    border: none;
+    margin-bottom: 10px;
+    color: #A9A9A9;
+    margin-right: 30px;
+}
+.form_f:nth-child(3n) {
+    margin-right: 0px;
+}
+.form_textarea {
+    width: 334px;
+    float: left;
+    height: 134px;
+    text-indent: 10px;
+    padding: 0px;
+    outline: medium none;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    border: none;
+    margin-bottom: 25px;
+    color: #A9A9A9;
+    margin-right: 52px;
+    padding-top: 6px;
+    font-size: 14px;
+}
+.form_textarea:nth-child(2n) {
+    margin-right: 0px;
+}
+.form_button {
+    display: block;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #003199;
+    margin: 0 auto;
+    color: #003199;
+    background: none;
+}
+.form_button:hover {
+    background: #003199;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.form_button.comp_f {
+    clear: both;
+    float: left;
+}
+.form_f.comp_f {
+    display: block;
+    float: none;
+    clear: both;
+}
+
+/*Резюме*/
+/*пойск студента*/
+.search_student {
+    padding: 20px;
+    background-color: #5b7fa6;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.form_f.search_prof {
+    width: 435px;
+    float: left;
+    margin-right: 25px;
+}
+.form_f.search_prof_region {
+    margin-right: 0px;
+}
+.search_checkbox input {
+    float: left;
+    margin-top: 1px;
+    margin-right: 9px;
+}
+.search_checkbox {
+    overflow: hidden;
+    float: left;
+    width: 195px;
+    font-size: 14px;
+    font-family: "PTSansBold";
+    color: #fff;
+    margin-top: 20px;
+}
+.search_button {
+    float: right;
+    height: 34px;
+    background-image: url(../img/search_button.jpg);
+    border: none;
+    color: #fff;
+    width: 167px;
+    font-family: "PTSansBold";
+    font-size: 16px;
+    margin-top: 12px;
+}
+.search_student_item {
+    width: 206px;
+    border: 2px solid #5b7fa6;
+    padding: 20px 10px;
+    text-align: center;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.search_student_item:nth-child(3n) {
+    margin-right: 0px;
+}
+.student_name {
+    margin-bottom: 10px;
+}
+.student_name a {
+    font-family: "PTSansBold";
+    color: #5b7fa6;
+    font-size: 16px;
+}
+.student_name a:hover {
+    text-decoration: underline;
+}
+.student_prof {
+    font-family: "PTSansRegular";
+    color: #5b7fa6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.student_city {
+    font-family: "PTSansRegular";
+    color: #5b7fa6;
+    font-size: 14px;
+}
+/*конец*/
+.compani_item {
+    padding: 15px;
+    border: 3px solid #039;
+    overflow: hidden;
+    font-family: "PTSansRegular";
+    font-size: 14px;
+    color: #5b7fa6;
+    margin-bottom: 15px;
+}
+.compani_item_img {
+    width: 201px;
+    border: 2px solid #039;
+    float: left;
+    margin-right: 15px;
+    text-align: center;
+}
+.comp_info {
+    overflow: hidden;
+}
+.title_min {
+    font-family: "PTSansBOld";
+    color: #5b7fa6;
+    margin-bottom: 15px;
+    font-size: 16px;}
+.des_comp {
+    margin-bottom: 15px;
+}
+.news_container p {
+    font-family: "PTSansRegular";
+    font-size: 14px;
+    color: #5b7fa6;
+    margin-bottom: 10px;
+    line-height: 16px;
+}
