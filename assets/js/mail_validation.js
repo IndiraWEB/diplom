@@ -12,12 +12,28 @@ function is_valid_form() {
 var $mjq = jQuery.noConflict();
 $mjq(function(){
 	$mjq(document).ready(function(){
+            var selfac = $mjq('select#selfac :selected').val();
+$mjq('input#fac').val(selfac);
+
+ $mjq('select#selfac').change(function(){
+     var fac = $mjq('select#selfac :selected').val();
+$mjq('input#fac').val(fac);
+ });
+ 
+  var reg = $mjq('select#reg :selected').text();
+$mjq('input#region').val(reg);
+
+ $mjq('select#reg').change(function(){
+     var facreg = $mjq('select#reg :selected').text();
+$mjq('input#region').val(facreg);
+alert($mjq('input#region').val())
+ });
         var status =  $mjq('select#selwho :selected').text();
         $mjq('input#status').val(status);
          
-           $mjq('select#selwho').on('change',function(){
-              var newst =$mjq('select#selwho :selected').text() ;
-              $mjq('input#status').val(newst);
+        $mjq('select#selwho').on('change',function(){
+        var newst =$mjq('select#selwho :selected').text() ;
+        $mjq('input#status').val(newst);
               
            });
            var status_log =  $mjq('select#logwho :selected').text();

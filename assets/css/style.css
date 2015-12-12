@@ -28,10 +28,6 @@
     font-style: normal;
     font-weight: normal;
 }
-.error {
-        background: #f60000;
-        border: 3px solid #d50000;
-}
 .top_line {
     height: 36px;
     background-color: #003399;
@@ -665,4 +661,14 @@ ul.f_menu li a {
     color: #5b7fa6;
     margin-bottom: 10px;
     line-height: 16px;
+}
+.news_first_lvl {
+    width: 230px;
+    float: left;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-bottom:15px;
+}
+.news_first_lvl:nth-child(3n) {
+    margin-right: 0px;
 }

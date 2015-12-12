@@ -56,7 +56,15 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/dashboard';
 
+
 $route['admin/components/(:any)'] = 'admin/components/$1/$1';
 $route['admin/components/(:any)/(:any)'] = 'admin/components/$1/$1/$2';
 $route['admin/components/(:any)/(:any)/(:any)'] = 'admin/components/$1/$1/$2/$3';
 $route['admin/components/(:any)/(:any)/(:any)/(:any)'] = 'admin/components/$1/$1/$2/$3/$4';
+
+$route['moderator']='moderator/moderboard';
+$route['moderator/quest'] = 'moderator/quest/quest';
+$route['moderator/quest/(:any)'] = 'moderator/quest/quest/$1';
+$route['moderator/quest/(:any)/(:any)'] = 'moderator/quest/quest/$1/$2';
+$route['moderator/quest/(:any)/(:any)/(:any)'] = 'moderator/quest/$1/$1/$2/$3';
+$route['moderator/quest/(:any)/(:any)/(:any)/(:any)'] = 'moderator/quest/$1/$1/$2/$3/$4';

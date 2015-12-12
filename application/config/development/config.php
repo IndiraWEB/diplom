@@ -127,7 +127,7 @@ $config['enable_hooks'] = FALSE;
 |
 */
 $config['subclass_prefix'] = 'MY_';
-$config['subclass_prefixes'] = array('Base_', 'CLI_', 'Admin_');
+$config['subclass_prefixes'] = array('Base_', 'CLI_', 'Admin_','Moderator_');
 
 /*
 |--------------------------------------------------------------------------

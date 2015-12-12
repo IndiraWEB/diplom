@@ -66,19 +66,19 @@
 									<a >Выпускники</a>
 									<ul class="sub_menu">
 										<li>
-											<a href="">Бакалавр</a>
+											<a href="welcome/search_student/B/1">Бакалавр</a>
 										</li>
 										<li>
-											<a href="">Магистр</a>
+											<a href="welcome/seach_student/M/1">Магистр</a>
 										</li>
 										<li>
-											<a href="">Доктор</a>
+											<a href="welcome/search_student/D/1">Доктор</a>
 										</li>
 									</ul>
 								</li>
 								<li>
 
-									<a href="">Компании</a>
+									<a href="welcome/search_company/1">Компании</a>
 								</li>
 								<li>
 									<a href="">Контакты</a>
@@ -89,8 +89,10 @@
 				</div>
 				<div class="big_photo">
 					<div class="add_bg">
-						<a href="" class="add summary">Разместить резюме</a>
-						<a href="" class="add company">Добавить компанию</a>
+<!--                                            class="add summary"-->
+						<a
+                                                    <?php if($this->session->userdata("id_student")) { echo 'href="welcome/resume/'.$this->session->userdata("id_student").'" class=" add summary"'; }else { echo "href='#enter' class='open_modal add summary'";} ?> >Разместить резюме</a>
+						<a <?php if($this->session->userdata("id_company")) { echo 'href="welcome/company/'.$this->session->userdata("id_company").'" class=" add summary"'; }else { echo "href='#enter' class='open_modal add summary'";} ?>>Добавить компанию</a>
 					</div>
 				</div>
 			</div>
@@ -152,7 +154,7 @@
                     <option selected >Студент</option>
                     <option>Работодатель</option>
                 </select>
-                 <input type="text" name="log_status_" id="log_status">
+                 <input type="hidden" name="log_status_" id="log_status">
                 <button type="submit" name="submit1" class="form_button" >Войти</button>
         </form>
 <div id="res" >

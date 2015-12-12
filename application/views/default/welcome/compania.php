@@ -2,16 +2,56 @@
 	<div class="cr">
 		<div class="container">
 			<div class="content">
+                            <div class="title">Информация о компании</div>
+                            <?php if(isset($company)){ ?>
+                            <table>
+                                <tr><td colspan="2" align="center"><?php echo $company['name'] ?></td></tr>
+                                <tr> <td></td><td ><?php echo $company['description'] ?></td></tr>
+                            </table>
+                            <?php } ?>
+                            <div class="rezume">
+                                
+                            </div>
 				<div class="title">Разместить данные о компании</div>
 				<div class="rezume">
 					<form>
-						<input  name="name1"  maxlength="200" class="form_f comp_f" type="text" size="1"  required placeholder="Название организации..."/>
-						<select class="form_f  comp_f" >
-							<option>Регион</option>
-							<option>Астана</option>
+                                            <table><tr><td colspan="2" align="center">
+                                            <div class=""><label>Данные контактного лица</label></div>
+                                                    </td>
+                                            </tr>
+                                            <tr><td>Фамилия</td> <td><input type="text" class="form_f comp_f" id="fam" name="fam_"></td>
+                                            
+                                            </tr>
+                                            <tr><td><label>Имя</label></td><td> <input type="text" class="form_f comp_f" id="manname_" name="manname_"></td></tr>
+                                           
+                                             <tr><td>Отчество</td><td><input type="text" class="form_f comp_f" id="fath" name="fath_"></td></tr>
+                                            
+                                            
+                                             <tr><td>E-Mail</td><td><input  name="email_comp" id="email_comp" maxlength="200" class="form_f comp_f" type="text" size="1" value="<?php echo $company['email'] ?>"  required placeholder="E-mail организации..."/></td></tr>
+                                             <tr><td>Контактный телефон</td><td><input  name="tel_comp"  id="tel_comp" maxlength="200" class="form_f comp_f" type="text" size="1" value="<?php echo $company['phone'] ?>" required placeholder="Телефон организации..."/></td></tr>
+
+                                            <tr><td>Регион</td><td><select class="form_f  comp_f" id="comp_reg" >
+							<option>Восточный Казахстан</option>
+                                                        <option>Западный Казахстан</option>
+                                                        <option>Северный Казахстан</option>
+                                                        <option selected>Центральный Казахстан</option>
+                                                        <option>Южный Казахстан</option>
 						</select>
-						<textarea name="" id="" class="form_textarea comp_f" cols="30" rows="10" required placeholder="Дополнительные текст..."></textarea>
-							<button class="form_button comp_f ">Отправить</button>
+                                                    </td>
+                                                </tr>
+                                                <input type="hidden" id="comp_region">
+                                                <tr><td>Дополнительная информация</td>
+                                                    <td>
+                                                <textarea name="" id="" class="form_textarea comp_f" cols="30" rows="10" required placeholder="Дополнительные текст...">
+                                                    <?php  echo $company['description'] ?>
+                                                </textarea>
+                                                        </td>
+                                                </tr>
+                                                <tr><td colspan="2">
+						<button class="form_button comp_f ">Отправить</button>
+                                                    </td>
+                                                </tr>
+                                            </table>
 					</form>
 				</div>
 			</div>
@@ -50,77 +90,4 @@
 			</div>
 		</div>
 	</div>
-	<footer>
-		<div class="cr">
-			<div class="footer">
-				<div class="logo">
-					<a href="">
-						<img src="img/logo.png" alt=""/>
-					</a>
-				</div>
-				<div class="footer_menu">
-					<ul class="f_menu">
-						<li>
-							<a href="">Главная</a>
-						</li>
-						<li>
-							<a >Выпускники</a>
-							<ul class="sub_menu_footer">
-								<li>
-									<a href="">Бакалавр</a>
-								</li>
-								<li>
-									<a href="">Магистр</a>
-								</li>
-								<li>
-									<a href="">Доктор</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-
-							<a href="">Компании</a>
-						</li>
-						<li>
-							<a href="">Контакты</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer_addres">
-					<p>
-						© С.Сейфуллин атындағы Қазақ агротехникалық университеті, 2015
-					</p>
-					<p>
-						Қазақстан Республикасы, 010000, Астана қ-сы, Жеңіс даңғылы, 62
-					</p>
-					<p>Тел.: (8-7172) 317-547, факс: (8-7172) 316-072</p>
-					<p>e-mail: agun.katu@gmail.com</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<div id="enter" class="modal_div">
-		<!-- скрытый див с уникальным id = modal1 -->
-		<span class="modal_close"></span>
-		<span class="title_z">Войти</span>
-		<form method="POST" name="form1" action="form.php" >
-			<input  name="name1" id="name" maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Имя..."/>
-			<input   name="phone1" id="user_phone" maxlength="200" class="modal_f " type="text" size="1"  required placeholder="Пароль..."/>
-			<button type="submit" name="submit1" class="form_button" >Войти</button>
-		</form>
-	</div>
-	<div id="overlay"></div>
-	<div id="registr" class="modal_div">
-		<!-- скрытый див с уникальным id = modal1 -->
-		<span class="modal_close"></span>
-		<span class="title_z">Регистрация</span>
-		<form method="POST" name="form1" action="form.php" >
-			<input  name="name1" id="name" maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Логин..."/>
-			<input   name="phone1" id="user_phone" maxlength="200" class="modal_f " type="text" size="1"  required placeholder="mail..."/>
-			<input  name="name1" id="name" maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Пароль..."/>
-			<input   name="phone1" id="user_phone" maxlength="200" class="modal_f " type="text" size="1"  required placeholder="Пароль..."/>
-			<button type="submit" name="submit1" >Обратный Звонок</button>
-		</form>
-	</div>
-	<div id="overlay"></div>
-</body>
+	
