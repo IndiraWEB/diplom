@@ -72,12 +72,12 @@
 				<div class="title">Новости</div>
 				<div class="news_item_side_bar">
 					<div class="news_item_side_bar_img">
-						<a href="">
+						<a href="welcome/news/1">
 							<img src="img/news.jpg" alt=""/>
 						</a>
 					</div>
 					<div class="news_item title">
-						<a href="">Lorem Ipsum is simply dummy text</a>
+						<a href="welcome/news/1">Lorem Ipsum is simply dummy text</a>
 					</div>
 					<div class="news_item_des">
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry....</p>

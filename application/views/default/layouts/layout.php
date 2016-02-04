@@ -37,7 +37,13 @@
                                         echo '<a href="'.base_url().'welcome/logout/'.$this->session->userdata("status").'" id="ex_in" class=" ">Выйти</a>';
                                     }?>
 					<span>|</span>
+                                        <?php if($this->session->userdata('id_company')) {
+                                            echo "<a href='welcome/company/".$this->session->userdata('id_company')."'>Личный кабинет</a>";
+                                        }elseif($this->session->userdata('id_student')){
+                                              echo "<a href='welcome/resume/".$this->session->userdata('id_student')."'>Личный кабинет</a>";
+                                        }else{?>
 					<a href="#registr" class="open_modal">Регистрация</a>
+                                        <?php } ?> 
 				</div>
 			</div>
 		</div>
@@ -66,13 +72,13 @@
 									<a >Выпускники</a>
 									<ul class="sub_menu">
 										<li>
-											<a href="welcome/search_student/B/1">Бакалавр</a>
+											<a href="welcome/search/B/1">Бакалавр</a>
 										</li>
 										<li>
-											<a href="welcome/seach_student/M/1">Магистр</a>
+											<a href="welcome/seach/M/1">Магистр</a>
 										</li>
 										<li>
-											<a href="welcome/search_student/D/1">Доктор</a>
+											<a href="welcome/search/D/1">Доктор</a>
 										</li>
 									</ul>
 								</li>
@@ -81,7 +87,7 @@
 									<a href="welcome/search_company/1">Компании</a>
 								</li>
 								<li>
-									<a href="">Контакты</a>
+									<a href="welcome/contacts">Контакты</a>
 								</li>
 							</ul>
 						</div>

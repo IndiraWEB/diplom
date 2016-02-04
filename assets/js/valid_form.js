@@ -33,11 +33,17 @@ $(document).ready(function(){
  alert(regioni);
 });
 $("select#FmProf").on("change",function(){
-var profi =$("select#FmProf :selected").text();
+var profi =$("select#FmProf :selected").val();
  $("input#Prof").val(profi);
- alert(profi)
+ alert(profi);
 });
-
+//Выбор степени магистр и тп
+var stepen = $('select#stepen :selected').val();
+$('input#mag').val(stepen);
+$('select#stepen').change(function(){
+    var stepen = $('select#stepen :selected').val();
+    $('input#mag').val(stepen);
+});
 $("#FrFam").bind('blur', is_valid_FrFam);
 $("#FrName").bind('blur', is_valid_FrName);
 $("#FmFathname").bind('blur', is_valid_FmFathname);
@@ -49,11 +55,26 @@ $("#FrNav").bind("blur",is_valid_FrNav);
    $('#formResume').bind("submit", function(e) {
         e.preventDefault();
         var base_url = $("base").attr('href');
+        var id_student = $('input#id_stud').val();
         if(!is_valid_formResume())
             return false;
         $.ajax({
             type:"post",
-            url: base_url + "welcome/change/student/"
+            url: base_url + "cabinet/student_change/"+id_student ,
+            data: $('#formResume').serialize(),
+            dataType: "json",
+            success : function(data){
+  if(data.error === false){
+  function func() {
+                  var redirect_to =base_url+"welcome/resume/"+id_student ;
+                  location.href= redirect_to;
+                  }
+  setTimeout(func, 1000);
+                          }
+            },
+            error: function(data){
+                alert(JSON.stringify(data));
+            }
         });
         
     });

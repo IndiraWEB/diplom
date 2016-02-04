@@ -2,25 +2,31 @@
 	<div class="cr">
 		<div class="container">
 			<div class="content">
-				<div class="title">Поиск студентов</div>
-                                <?php
+                            <?php
                                 $this->load->helper('url');
                                 $show = false; 
+                                $lvl="";
                                 switch ($this->uri->segment(3)){
                                     case "B":
                                         $show = true;
+                                        $lvl="степени бакалавр";
                                         break;
                                      
                                     case "M":
                                         $show = true;
+                                        $lvl="степени магистр";
                                         break;
                                     case "D":
                                         $show = true;
+                                        $lvl="степени доктор";
                                         break;
-                                }
-                                if($show = false ){ ?>
+                                }?>
+				<div class="title">Поиск студентов <?php echo $lvl ; ?></div>
+                                                
+                                   <?php
+                                if($show === true ){ ?>
 				<div class="search_student">
-					<form action="welcome/search/1" method="post">
+					<form action="welcome/search_student/<?php echo $this->uri->segment(3) ?>/1" method="post">
 						<select id="selfac" class="form_f  search_prof" >
 							<option>Выберите факультет</option>
 							<option value="1">КСиПО</option>
@@ -34,6 +40,7 @@
 						</select>
                                             <input type="hidden" id="fac" name= "fac_id" >
 						<select id="reg" class="form_f search_prof_region  " >
+                                                        <option>Неважно</option>
 							<option>Восточный Казахстан</option>
                                                         <option>Западный Казахстан</option>
                                                         <option>Северный Казахстан</option>
@@ -48,7 +55,7 @@
 						<button class="search_button">Пойск</button>
 					</form>
 				</div>
-                                <?php } ?>
+                                <?php  } ?>
 				<ul class="search_stundet_item_container">
                                     <?php  
                                      if($infa) {

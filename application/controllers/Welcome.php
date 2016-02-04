@@ -39,6 +39,9 @@ class Welcome extends Base_Controller {
              
                 );
 	}
+        public function action_contacts(){
+            $this->render('contact');
+        }
         public function action_register(){
             $message=""; $itsOK =false;
             if($this->checkCompany($this->input->post('username_'))===true&
@@ -227,76 +230,113 @@ echo $this->email->print_debugger();
             
         }
         function action_search_student($st="",$page=""){
-            $this->render("search_student",array(
-                'js'=>  $this->asset->js('filter'),
-                'infa'=>$this->filter()
-            ));
+            $this->filter();
+            $this->load->library('pagination');
+             if(isset($page)){
+             $per_page = 12;
+             if(empty($page)) $page=1;
+            /* Будем при любом раскладе начинать с 0 страницы */
+            if ($page < 0){
+                $page = 0;
+            }
+            $data['infa']=$this->api->search_stud($page,$per_page);
+            
+            $this->load->library('pagination');
+            $config['base_url'] = '/welcome/search_company/';
+            $config['first_url'] = '/welcome/search_company/1';
+            $config['total_rows'] = $this->api->all_student($st);
+            $config['full_tag_open']='<div c lass="row"  align="center"><div class="col-md-4 col-md-offset-4" align="center"><ul class="pagination" >';
+            $config['full_tag_close']='</ul></div></div>';
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['num_tag_open'] = '<li >';
+            $config['num_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a>';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['prev_link'] = '<<';
+            $config['prev_tag_open'] = '<li>';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = '>>';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['per_page'] = $per_page;
+             /* Загружаем наши настройки */
+            
+            $this->pagination->initialize($config);
+            $data['pages'] = $this->pagination->create_links();
+             $data['js']= $this->asset->js('filter');
+
+            $this->render("search_student",$data);
+             }
         }
-        function action_search($page){
-           $filter = $this->filter();
-            $this->render("search_student",array('infa'=>$filter, 
-                'js'=>  $this->asset->js('filter')));
+        function action_search($st,$page){
+           $this->load->library('pagination');
+             if(isset($page)){
+             $per_page = 12;
+             if(empty($page)) $page=1;
+            /* Будем при любом раскладе начинать с 0 страницы */
+            if ($page < 0){
+                $page = 0;
+            }
+            $data['infa']=$this->api->get_students($st,$page,$per_page);
+            
+            $this->load->library('pagination');
+            $config['base_url'] = '/welcome/search_company/';
+            $config['first_url'] = '/welcome/search_company/1';
+            $config['total_rows'] = $this->api->count_get_students( $st);
+            $config['full_tag_open']='<div c lass="row"  align="center"><div class="col-md-4 col-md-offset-4" align="center"><ul class="pagination" >';
+            $config['full_tag_close']='</ul></div></div>';
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['num_tag_open'] = '<li >';
+            $config['num_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a>';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['prev_link'] = '<<';
+            $config['prev_tag_open'] = '<li>';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = '>>';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['per_page'] = $per_page;
+             /* Загружаем наши настройки */
+            
+            $this->pagination->initialize($config);
+            $data['pages'] = $this->pagination->create_links();
+             $data['js']= $this->asset->js('filter');
+
+            $this->render("search_student",$data);
+             }
         }
         public function filter(){
             
             
-            if($this->input->post('opyt')){
-                
+            if($this->input->post('fac_id')){
+            $reg="";   
             $this->session->unset_userdata('opyt');
             $this->session->unset_userdata('dop_nav');
             $this->session->unset_userdata('fac_id');
             $this->session->unset_userdata('region');
+            if($this->input->post('region')==="Неважно"){
+                $reg="";
+            }
+            $this->session->set_userdata('opyt',$this->input->post('opyt')  );
+            $this->session->set_userdata('dop_nav',$this->input->post('dop_nav')  );
+            $this->session->set_userdata('fac_id',$this->input->post('fac_id')  );
+            $this->session->set_userdata('region', $reg );
+            }
             
-            $this->session->set_userdata('opyt',$this->input->post('opyt')  );
-            $this->session->set_userdata('dop_nav',$this->input->post('dop_nav')  );
-            $this->session->set_userdata('fac_id',$this->input->post('fac_id')  );
-            $this->session->set_userdata('region',$this->input->post('region')  );
-            }
-            elseif(!$this->session->userdata('opyt')){
-                
-            $this->session->set_userdata('opyt',$this->input->post('opyt')  );
-            $this->session->set_userdata('dop_nav',$this->input->post('dop_nav')  );
-            $this->session->set_userdata('fac_id',$this->input->post('fac_id')  );
-            $this->session->set_userdata('region',$this->input->post('region')  );
-            }
-            $opyt=    $this->session->userdata('opyt');
-            $dop_nav= $this->session->userdata('dop_nav');
-            $fac_id=  $this->session->userdata('fac_id');
-            $region=  $this->session->userdata('region');
+//            $opyt=    $this->session->userdata('opyt');
+//            $dop_nav= $this->session->userdata('dop_nav');
+//            $fac_id=  $this->session->userdata('fac_id');
+//            $region=  $this->session->userdata('region');
            
-         $text = "";
-         if($fac_id!=" "&!empty($region)&$dop_nav=="on"&$opyt=="on") { 
          
-            $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND `dop_nav` NOT NULL AND `opyt` NOT NULL AND `region` "
-                    . "LIKE '%$region%'";
-                    
-         }elseif($fac_id!=" "&!empty($region)&$dop_nav=="on"){
-             $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND `dop_nav` NOT NULL  AND `region` "
-                    . "LIKE '%$region%'";
-        }
-        elseif($fac_id!=" "&!empty($region)&$opyt=="on"){
-             $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND  `opyt` NOT NULL AND `region` "
-                    . "LIKE '%$region%'";
-        }
-        elseif($fac_id!=" "&$opyt=="on"&$dop_nav=="on"){
-             $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND `dop_nav` NOT NULL  AND `opyt` NOT NULL ";
-        }
-        elseif($opyt=="on"&$dop_nav=="on"){
-             $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND `dop_nav` NOT NULL  AND `opyt` NOT NULL ";
-        }
-        elseif($opyt=="on"&$region!=" "){
-             $text="SELECT * FROM $this->_studnet WHERE opyt NOT NULL AND `region` "
-                    . "LIKE '%$region%'";
-        }
-        elseif($region!=" "){
-             $text="SELECT * FROM $this->_studnet WHERE  `region` "
-                    . "LIKE '%$region%'";
-        }
-        elseif($fac_id!=" "&!empty($region)){
-             $text="SELECT * FROM $this->_studnet WHERE `fc_code`=$fac_id AND `region` "
-                    . "LIKE '%$region%'"; 
-        }
-        return $this->db->query($text)->result_array();
+         
             
         }
                 function action_news($id=""){
@@ -329,5 +369,26 @@ echo $this->email->print_debugger();
              
             redirect(base_url());
         }
+        public function action_to_prak($id){
+           $res="";
+            if($this->session->userdata('id_company')){
+                $this->api->invite($id);
+             $res= $this->request("Заявка отправлена успешно");
+            }
+            else{
+               $res= $this->request("Действие не доступно. Вы не являетесь работодателем либо вы не авторизовались",true);
+            }
+            return $res;
+        }
+        public function request($message,$error=false){
+            $ret=json_encode(array(
+                'message'=>$message,
+                'error'=>$error
+            ));
+            echo $ret;
+            die();
+            
+        }
+       
    
 }

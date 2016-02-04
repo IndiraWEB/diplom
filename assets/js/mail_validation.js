@@ -12,6 +12,18 @@ function is_valid_form() {
 var $mjq = jQuery.noConflict();
 $mjq(function(){
 	$mjq(document).ready(function(){
+            $mjq("#invite").click(function(){
+                var id_stud = $mjq("#id_stud").attr('value');
+                var base_url = $("base").attr('href');
+                $.ajax({
+                    url: base_url+"welcome/to_prak/" + id_stud,
+                    type: "post",
+                    dataType : "json",
+                    success: function(response){
+                        alert(response.message);
+                    }
+                });
+            });
             var selfac = $mjq('select#selfac :selected').val();
 $mjq('input#fac').val(selfac);
 
@@ -123,7 +135,7 @@ alert($mjq('input#region').val())
 
 function returnHtml(alertClass, html){
     return '<div class="alert  '+alertClass+'">\n\
-<button type="button" class="close" data-dismiss="alert">&times;</button>'+html+'</div>';
+'+html+'</div>';
 }
 
 // Email validate

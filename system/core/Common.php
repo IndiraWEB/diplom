@@ -520,7 +520,7 @@ if ( ! function_exists('set_status_header'))
 				303	=> 'See Other',
 				304	=> 'Not Modified',
 				305	=> 'Use Proxy',
-				307	=> 'Temporary Redirect',
++				307	=> 'Temporary Redirect',
 
 				400	=> 'Bad Request',
 				401	=> 'Unauthorized',
@@ -555,7 +555,7 @@ if ( ! function_exists('set_status_header'))
 			}
 			else
 			{
-				show_error('No status text available. Please check your status code number or supply your own message text.', 500);
++				show_error('No status text available. Please check your status code number or supply your own message text.', 500);
 			}
 		}
 
