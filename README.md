@@ -1,2 +1,2 @@
 # diplom
-#Indir Yessimova 2016
+#Indira Yessimova 2016
