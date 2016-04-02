@@ -8,7 +8,7 @@
                                     foreach($companies as $cmp ){?>
 				<div class="compani_item">
 					<div class="compani_item_img">
-						<img src="img/comp1.png" alt=""/>
+						<img src="assets/img/company/<?php  echo $cmp['image'] ;?>" alt=""/>
 					</div>
 					<div class="comp_info">
 

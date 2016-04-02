@@ -18,6 +18,41 @@ body {
 ol, ul {list-style: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 strong,b{font-weight:bold;}
+img {
+  border: 0;
+}
+img {
+    max-width: 100% !important;
+  }
+img {
+  vertical-align: middle;
+}
+img {
+  vertical-align: middle;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  padding: 4px;
+  line-height: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.img-circle {
+  border-radius: 50%;
+}
 
 .cr {
   width: 1000px;

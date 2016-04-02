@@ -23,7 +23,7 @@ class Logfile extends MY_Model {
      */
     public function check()
     {
-        if($this->session->userdata('is_auth') === true)
+        if($this->session->userdata('is_auth_moder') === true)
         {
             return true;
         }
@@ -33,7 +33,7 @@ class Logfile extends MY_Model {
 
     public function check_and_redirect($to = '/', $exclude = '')
     {      
-        if($this->session->userdata('is_auth') === true)
+        if($this->session->userdata('is_auth_moder') === true)
         {
             return true;
         } else {
@@ -48,13 +48,14 @@ class Logfile extends MY_Model {
 
     public function login($name = '', $pass = '')
     {  
-      
+        
         $query = $this->db->get_where('moderator', array('user_name' => $this->input->post('login')));
         $result = ($query->num_rows() > 0) ? $query->row_array() : false;
-     
+        //var_dump(md5($this->input->post('password')));
+         ///var_dump(md5($this->input->post('password'))=== $result['password']);
         if(md5($this->input->post('password'))=== $result['password'])
         {
-            $this->session->set_userdata('is_auth', true);
+            $this->session->set_userdata('is_auth_moder', true);
             $this->session->set_userdata('modername',  $this->input->post($this->login));
             return true;
         }
@@ -64,7 +65,8 @@ class Logfile extends MY_Model {
     }
     public function logout()
     {
-        $this->session->unset_userdata('is_auth');
+        $this->session->unset_userdata('is_auth_moder');
+        $this->session->unset_userdata('modername');
         $this->session->sess_destroy();
 
         return true;

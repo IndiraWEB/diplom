@@ -18,7 +18,8 @@ class Moderator_Controller extends Base_Controller {
             redirect('eidos/setup');
         }
         $this->config->set_item('language', 'russian');
-       // $this->load->model('component/component');
+       $this->load->model('component/component');
+       //$this->load->model('moderator/logfile',"moderators");
         $this->lang->load('backend/global');
         $this->load->library(array('asset', 'session','moderators'));
         $this->load->helper('url');

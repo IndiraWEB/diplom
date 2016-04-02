@@ -20,6 +20,7 @@ echo " <div class='student'>"."<span>".'Отчество:'."</span>" .$student['
 echo " <div class='student'>"."<span>".'Дата рождения:'."</span>" .$student['burn']."</div>";
 echo "<div class='student'>"."<span>".'Е-mail:'."</span>" ." <a href='mailto:".$student['email']."'> " .$student['email']."</a>"."</div>";
 echo " <div class='student'>"."<span>".'Опыт работы:'."</span>" .$student['dop_nav']."</div>";
+echo " <div class='student'>"."<span>".'Опыт работы:'."</span>" .$student['dop_nav']."</div>";
 echo " <div class='student'>"."<span>".'Дополнительные навыки:'."</span>" .$student['opyt']."</div>";
 
 }
@@ -49,31 +50,33 @@ echo " <div class='student'>"."<span>".'Дополнительные навык�
 </select>
 <input type="hidden" id="Region" name="region_" >
 <select class="form_f" id="FmProf" >
-    <option>Выберите факультет</option>
-    <option value="1">КСиПО</option>
+   <option>Выберите факультет</option>
+  <!--   <option value="1">КСиПО</option>
     <option value="3">Экономический</option>
     <option value="2">Архитектурный</option>
     <option value="8">Агрономический</option>
     <option value="7">Энергетический</option>
     <option value="4">ВиТЖ</option>
-    <option value="5">Землеустройства</option>
+    <option value="5">Землеустройства</option> -->
 </select>
 <input type="hidden" id="Prof" name="fac_" value="<?php echo $student['fc_code'] ?>" >
 <select class="form_f" id="lvl">
+<!--
 <option value="070300">Информационные системы</option>
 
 <option value="012000">Профессиональное обучение</option>
 
 <option value="070400">Вычислительная техника и
 программное обеспечение</option>
+-->
 </select>
 <input type="hidden" id="level" name="spec_name_">
 <select class="form_f" id="stepen">
 <option value="5B">бакалавр</option>
 
-<option value="5M">магистр</option>
+<option value="6M">магистр</option>
 
-<option value="5D">доктор</option>
+<option value="6D">доктор</option>
 </select>
 <input type="hidden" id="mag" name="stepen_">
 
@@ -97,7 +100,7 @@ echo " <div class='student'>"."<span>".'Дополнительные навык�
         <div class="news_item_side_bar">
                 <div class="news_item_side_bar_img">
                         <a href="">
-                        <img src="img/news.jpg" alt=""/>
+                        <img src="assets/img/news.jpg" alt=""/>
                         </a>
                 </div>
                 <div class="news_item title">
@@ -112,7 +115,7 @@ echo " <div class='student'>"."<span>".'Дополнительные навык�
         <div class="news_item_side_bar">
                 <div class="news_item_side_bar_img">
                         <a href="">
-                                <img src="img/news.jpg" alt=""/>
+                                <img src="assets/img/news.jpg" alt=""/>
                         </a>
                 </div>
                 <div class="news_item title">

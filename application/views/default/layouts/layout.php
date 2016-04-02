@@ -75,7 +75,7 @@
 											<a href="welcome/search/B/1">Бакалавр</a>
 										</li>
 										<li>
-											<a href="welcome/seach/M/1">Магистр</a>
+											<a href="welcome/search/M/1">Магистр</a>
 										</li>
 										<li>
 											<a href="welcome/search/D/1">Доктор</a>

@@ -63,8 +63,8 @@ $route['admin/components/(:any)/(:any)/(:any)'] = 'admin/components/$1/$1/$2/$3'
 $route['admin/components/(:any)/(:any)/(:any)/(:any)'] = 'admin/components/$1/$1/$2/$3/$4';
 
 $route['moderator']='moderator/moderboard';
-$route['moderator/quest'] = 'moderator/quest/quest';
-$route['moderator/quest/(:any)'] = 'moderator/quest/quest/$1';
-$route['moderator/quest/(:any)/(:any)'] = 'moderator/quest/quest/$1/$2';
-$route['moderator/quest/(:any)/(:any)/(:any)'] = 'moderator/quest/$1/$1/$2/$3';
-$route['moderator/quest/(:any)/(:any)/(:any)/(:any)'] = 'moderator/quest/$1/$1/$2/$3/$4';
+//$route['moderator/components'] = 'moderator/components/student';
+$route['moderator/components/(:any)'] = 'moderator/components/$1/$1';
+$route['moderator/components/(:any)/(:any)'] = 'moderator/components/$1/$1/$2';
+$route['moderator/components/(:any)/(:any)/(:any)'] = 'moderator/components/$1/$1/$2/$3';
+$route['moderator/components/(:any)/(:any)/(:any)/(:any)'] = 'moderator/components/$1/$1/$2/$3/$4';

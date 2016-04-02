@@ -29,7 +29,7 @@ class Moderators {
      */
     public function check()
     {
-        if($this->Md->session->userdata('is_auth') === true)
+        if($this->Md->session->userdata('is_auth_moder') === true)
         {
             return true;
         }
@@ -52,23 +52,7 @@ class Moderators {
         redirect($to);
     }
 
-    public function login($name = '', $pass = '')
-    {  
-        $name = ( ! is_null($this->Md->input->post($this->login))) ? $this->Md->input->post($this->login) : $name;
-        $pass = ( ! is_null($this->Md->input->post($this->password))) ? $this->Md->input->post($this->password) : $pass;
-
-        $query = $this->Md->db->get_where($this->db_table, array($this->db_field_name => $name));
-        $result = ($query->num_rows() > 0) ? $query->row_array() : false;
-     
-        if(password_verify($pass, $result[$this->db_field_pass]))
-        {
-            $this->Md->session->set_userdata('is_auth', true);
-
-            return true;
-        }
-
-        return false;
-    }
+   
 
     public function logout()
     {

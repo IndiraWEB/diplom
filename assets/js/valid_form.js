@@ -5,6 +5,7 @@
  */
 
 $(document).ready(function(){
+    
     function is_valid_formResume() {
     
 	var ret = true;
@@ -16,7 +17,39 @@ $(document).ready(function(){
         if (!is_valid_FrNav()) var ret = false;
 	return ret;
 }
-   
+  
+ var base_url = $("base").attr('href');
+ $.ajax({
+        type:"post",
+        url: base_url +"welcome/get_all_spec",
+        data: "",
+        dataType: 'json',
+        success: function(data){
+        $.each(data,function(i){
+           // alert(data[i].name);
+           //наполняем селект всеми факультетами
+        $("#FmProf").append( $('<option value="'+data[i].id+'">'+data[i].name+'</option>'));
+                //перебор всех специальностей
+          //   var code =  $("input#Prof").val();
+                
+           $.each(data[i].specials, function(j){
+             // alert(data[i].specials[j].spec+"---" +data[i].specials[j].code)
+                $("select#lvl").append($('<option value="'+data[i].specials[j].code+'">'+data[i].specials[j].spec+'</option>'));
+               
+           
+           }) ;
+          
+        });
+        
+//           var code_fc =  $('#Prof').val();
+//          alert(code_fc);
+//           $.each(data[code_fc].specials, function(j){
+//             // alert(data[i].specials[j].spec+"---" +data[i].specials[j].code)
+//                $("select#lvl").append($('<option value="'+data[code_fc].specials[j].code+'">'+data[code_fc].specials[j].spec+'</option>'));
+//            }) ;
+        
+        }
+    });
  var lvl =$("select#lvl :selected").val();
  $("input#level").val(lvl);
  $("select#lvl").change(function(){
@@ -54,7 +87,7 @@ $("#FrNav").bind("blur",is_valid_FrNav);
         
    $('#formResume').bind("submit", function(e) {
         e.preventDefault();
-        var base_url = $("base").attr('href');
+       // var base_url = $("base").attr('href');
         var id_student = $('input#id_stud').val();
         if(!is_valid_formResume())
             return false;
@@ -78,6 +111,7 @@ $("#FrNav").bind("blur",is_valid_FrNav);
         });
         
     });
+    
     function is_valid_FrFam(){
         $this = $("#FrFam");
       

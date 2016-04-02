@@ -389,6 +389,22 @@ echo $this->email->print_debugger();
             die();
             
         }
+        public function action_get_all_spec(){
+         $facs=   $this->db->get("moderator")->result_array();
+          $specials=  $this->db->get("special")->result_array();
+          $ret_arr =array();
+          $i=0;
+          for(;$i<count($facs); $i++){
+              array_push($ret_arr, array("name"=>$facs[$i]['name_faculity'],"id"=>$facs[$i]["id_faculity"], "specials"=>array()));
+            $j =0;
+              for(;$j<count($specials) ; $j++){
+                  if($facs[$i]['id_faculity']==$specials[$j]['fc']){
+                    array_push($ret_arr[$i]["specials"], array("spec"=>$specials[$j]["name"],"code"=>$specials[$j]['code'],"fc_code"=>$specials[$j]['fc']));
+                  }
+              }
+          }
+          echo json_encode($ret_arr);
+        }
        
    
 }

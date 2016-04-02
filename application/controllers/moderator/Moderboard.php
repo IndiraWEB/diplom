@@ -27,8 +27,8 @@ class Moderboard extends Moderator_Controller {
         {
             if($this->input->post('password') == $this->input->post('password_again'))
             {
-                $this->db->where('login', $this->session->userdata('modername'));
-                $this->db->update('moderator', array('pass' => md5($this->input->post('password'))));
+                $this->db->where('user_name', $this->session->userdata('modername'));
+                $this->db->update('moderator', array('password' => md5($this->input->post('password'))));
                 $this->session->set_flashdata('success', 'Пароль изменен');
                 redirect('/moderator/moderboard/setting');
             } else {

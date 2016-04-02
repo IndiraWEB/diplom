@@ -20,18 +20,19 @@ class Authmod extends Moderator_Controller {
 
     public function action_login()
     {
+        //var_dump($this->dbmodel->login());
         if( ! $this->dbmodel->login())
         {
             $this->session->set_flashdata('auth_error', 'Логин или пароль введены не верно');
             redirect('moderator/authmod');
         }
 
-        redirect('moderator');
+        redirect('/moderator');
     }
 
     public function action_logout()
     {
         $this->moderators->logout();
-        redirect('moderator');
+        redirect('/moderator');
     }
 }

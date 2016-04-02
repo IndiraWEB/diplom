@@ -35,15 +35,19 @@
 
 <!--                <li><a href="#"><i class="uk-icon-bar-chart"></i> Статистика</a></li>-->
 
-                <li class="uk-nav-header">Компоненты</li>
+                <li class="uk-nav-header">Студенты</li>
                
                 <li class="uk-nav-divider"></li>
-                <li><a href="#">Лицензионное соглашение</a></li>
-                <li><a href="#">Завершить сеанс</a></li>
+                 <li><a href="/moderator/components/student">Все</a></li>
+                <li><a href="#">Трудоустроены</a></li>
+                <li><a href="#">Нетрудоустроены</a></li>
             </ul>
 
         </div>
     </div>
     
+    <div class="uk-width-7-10">
+        <?php echo  (isset($component)) ? $component: "" ; ?>
+    </div>
     <div class="uk-width-1-10"></div>
 </div>
